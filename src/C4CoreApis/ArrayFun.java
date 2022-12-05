@@ -11,5 +11,7 @@ public class ArrayFun {
         int asym[][] = new int[2][];
         asym[0] = new int[3];
         asym[1] = new int[6];
+
+        Arrays.binarySearch(asym, 1);
     }
 }

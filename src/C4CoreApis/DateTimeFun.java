@@ -1,6 +1,7 @@
 package C4CoreApis;
 
 import java.time.*;
+import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAmount;
 
 public class DateTimeFun {
@@ -15,7 +16,7 @@ public class DateTimeFun {
         System.out.println(date);
         // Will throw exception
 //        addToJanOne1999(Duration.ofHours(24));
-
+        ChronoUnit.DAYS.between(LocalTime.of(1, 1), LocalTime.of(1, 1));
 
     }
 
