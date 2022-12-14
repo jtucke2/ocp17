@@ -1,6 +1,7 @@
 package C10Streams;
 
 import java.util.IntSummaryStatistics;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
@@ -20,7 +21,6 @@ public class StreamFun {
 
         IntSummaryStatistics intSummaryStatistics = IntStream.range(500, 550).summaryStatistics();
         double average = intSummaryStatistics.getAverage();
-
 
     }
 }

@@ -21,6 +21,7 @@ public class FilesFun {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
         System.out.println(fooPath + " exists? " + Files.exists(fooPath));
         Path barPath = fooPath.resolve(Path.of("bar"));
         try {

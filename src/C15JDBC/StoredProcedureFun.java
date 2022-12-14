@@ -22,8 +22,20 @@ public class StoredProcedureFun {
             }
 
             try (CallableStatement callableStatement = connection.prepareCall("{call foo(?) }")) {
+                // INOUT param both share 1 index
                 callableStatement.registerOutParameter(1, Types.INTEGER);
                 callableStatement.setInt(1, 7);
+
+                ResultSet resultSet = callableStatement.executeQuery();
+                while (resultSet.next()) {
+                    int retVal = resultSet.getInt(1);
+                    System.out.println("Foo call returned: " + retVal);
+                }
+            }
+            try (CallableStatement callableStatement = connection.prepareCall("{?=call foo(?) }")) {
+                callableStatement.registerOutParameter(1, Types.INTEGER);
+                // With separate OUT param, IN param is now index 2
+                callableStatement.setInt(2, 7);
 
                 ResultSet resultSet = callableStatement.executeQuery();
                 while (resultSet.next()) {

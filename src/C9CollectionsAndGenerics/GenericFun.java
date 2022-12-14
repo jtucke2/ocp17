@@ -45,6 +45,7 @@ public class GenericFun {
     public static <T> T huh(T t) {
         return t;
     }
+
     public static void main(String[] args) {
         // GenC extends GenB extends GenA
         // The ArrayList<> type can be GenA or GenB, but not GenC
